@@ -27,6 +27,12 @@ nav {
   background-color: black;
   color: white;
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  .hemburger-search1 {
+    display: none;
+  }
 
   .left-nav {
     display: flex;
@@ -50,6 +56,10 @@ nav {
     }
   }
 
+  .middle-logo {
+    display: none;
+  }
+
   .right-nav {
     display: flex;
     flex-direction: row;
@@ -60,6 +70,31 @@ nav {
       color: #fff;
       background-color: black;
       border: 1px solid white;
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    .left-nav {
+      display: none;
+    }
+    .hemburger-search1 {
+      display: block;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .middle-logo {
+      display: block;
+      img {
+        width: 40px;
+        padding: 0;
+      }
+    }
+
+    .right-nav {
+      input {
+        display: none;
+      }
     }
   }
 }
@@ -73,7 +108,7 @@ nav {
   align-items: center;
   padding: 10px;
 
-  > :nth-child(3) {
+  :nth-child(3) {
     font-size: small;
   }
 
@@ -602,19 +637,18 @@ footer {
   }
 
   .bottom-footer-container {
+    width: 90%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: auto;
-    justify-content: space between;
+    margin: 20px auto;
     align-items: center;
-
+    justify-content: space-between;
     .payment-gateways {
-      flex: 1;
       display: flex;
       flex-direction: row;
       gap: 10px;
-      margin: 20px auto;
+      margin: 20px 20px 20px 0;
       align-items: center;
       ul {
         list-style: none;
@@ -624,10 +658,30 @@ footer {
         svg {
           background-color: white;
           border-radius: 3px;
-          width: 70px;
-          height: 40px;
+          width: 50px;
+          height: 30px;
         }
       }
+    }
+    .bottom-middle-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid white;
+      padding: 10px 20px;
+      .flag-container {
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+      }
+    }
+    .bottom-right-container {
+      font-size: small;
+      text-align: right;
+      color: grey;
     }
   }
 }
